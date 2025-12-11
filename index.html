@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TimelineJS – Colored Edition</title>
+
+  <!-- Load TimelineJS -->
+  <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+  <!-- Merriweather Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Merriweather', serif;
+    }
+
+    /* Tag Color Overrides */
+    .tl-timemarker.tl-tag-Evangelical--Eschatology---Identity .tl-timemarker-content { background: #b30000 !important; }
+    .tl-timemarker.tl-tag-Israeli--Eschatology---State--Politics .tl-timemarker-content { background: #003399 !important; }
+    .tl-timemarker.tl-tag-Geopolitical--Convergence .tl-timemarker-content { background: #c49e00 !important; }
+
+    /* Slide background images */
+    .tl-slide-background {
+      background-size: cover !important;
+      background-position: center !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="timeline-embed" style="width: 100%; height: 100vh;"></div>
+
+  <script>
+    var timeline = new TL.Timeline(
+      'timeline-embed',
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjcuoVKpGqoij_42IApWUtRzTJ3pJgLr85y_-kK23ZbMA9pUhH149jmYA9Ma7PNXcRUR2BqJU59uIy/pubhtml"
+    );
+  </script>
+
+</body>
+</html>
