@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Evangelical & Israeli Eschatologies Timeline</title>
+
+  <!-- TimelineJS core CSS -->
+  <link
+    title="timeline-styles"
+    rel="stylesheet"
+    href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css"
+  />
+
+  <!-- Merriweather font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Page layout */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f5f5f7;
+      font-family: "Merriweather", serif;
+    }
+
+    #timeline-embed {
+      width: 100%;
+      height: 650px;
+      max-width: 1100px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    /* Overall timeline background */
+    .tl-timeline {
+      background-color: #ffffff;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Time navigation bar */
+    .tl-timenav {
+      background-color: #f0f2f6;
+    }
+
+    /* Ticks on the time axis */
+    .tl-timeaxis-background {
+      background-color: #e2e5ec;
+    }
+    .tl-timeaxis-major .tl-timeaxis-tick:before {
+      background-color: #999999;
+    }
+    .tl-timeaxis-minor .tl-timeaxis-tick:before {
+      background-color: #cccccc;
+    }
+
+    /* Slide text area */
+    .tl-text {
+      background-color: #ffffff;
+    }
+
+    .tl-text h2.tl-headline {
+      font-family: "Merriweather", serif;
+      font-weight: 700;
+      color: #222222;
+    }
+
+    .tl-text .tl-text-content p {
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: #333333;
+    }
+
+    /* Timenav marker flags (default, then active) */
+    .tl-timemarker .tl-timemarker-content-container {
+      background-color: #ffffff;
+      border-radius: 3px;
+      border: 1px solid #d0d4e0;
+    }
+
+    .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
+      background-color: #3a71b0;
+      border-color: #3a71b0;
+    }
+
+    .tl-timemarker .tl-timemarker-content-container .tl-timemarker-text h2.tl-headline {
+      font-family: "Merriweather", serif;
+      font-size: 0.8rem;
+      color: #222222;
+    }
+
+    .tl-timemarker.tl-timemarker-active
+      .tl-timemarker-content-container
+      .tl-timemarker-text
+      h2.tl-headline {
+      color: #ffffff;
+    }
+
+    /* You’ll still see your tag filter, but TimelineJS does not expose
+       stable per-tag CSS hooks without tinkering in the library itself.
+       So here we theme the whole thing academically and in color, but
+       we don’t hard-map red/blue/gold to specific tag strings here. */
+
+    /* Media background on “background” slides */
+    .tl-slide.tl-full-background .tl-media-background {
+      background-size: cover !important;
+      background-position: center !important;
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="timeline-embed"></div>
+
+  <!-- TimelineJS core JS -->
+  <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+  <script>
+    // Use your published Google Sheet as the data source
+    var sheetUrl =
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjcuoVKpGqoij_42IApWUtRzTJ3pJgLr85y_-kK23ZbMA9pUhH149jmYA9Ma7PNXcRUR2BqJU59uIy/pubhtml";
+
+    var options = {
+      language: "en",
+      initial_zoom: 2,
+      hash_bookmark: true,
+      // We’re overriding fonts via CSS, so we leave font: "Default"
+    };
+
+    window.timeline = new TL.Timeline("timeline-embed", sheetUrl, options);
+  </script>
+</body>
+</html>
